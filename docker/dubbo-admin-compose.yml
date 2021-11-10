@@ -1,0 +1,11 @@
+version: '3'
+services:
+  dubbo-admin:
+    image: apache/dubbo-admin
+    container_name: dubbo-admin
+    ports:
+      - 8888:8080
+    environment:
+      - admin.registry.address=zookeeper://10.22.18.152:2181,10.22.18.152:2182,10.22.18.152:2183
+      - admin.config-center=zookeeper://10.22.18.152:2181,10.22.18.152:2182,10.22.18.152:2183
+      - admin.metadata-report.address=zookeeper://10.22.18.152:2181,10.22.18.152:2182,10.22.18.152:2183
